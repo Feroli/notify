@@ -9,6 +9,7 @@ import java.util.List;
 
 @Repository
 public interface LogEntryRepository extends JpaRepository<NotificationLogEntry, Long> {
-
     List<NotificationLogEntry> findByCategory(Category category);
+    List<NotificationLogEntry> findAllByOrderByTimestampDesc();
+
 }

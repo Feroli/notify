@@ -22,6 +22,9 @@ public class NotificationLogService {
     public List<NotificationLogEntry> retrieveLogEntries() {
         return logEntryRepository.findAll();
     }
+    public List<NotificationLogEntry> retrieveLogEntriesByTimestampDesc() {
+        return logEntryRepository.findAllByOrderByTimestampDesc();
+    }
 
     public List<NotificationLogEntry> retrieveLogEntriesWithCategory(Category category) {
         return logEntryRepository.findByCategory(category);
